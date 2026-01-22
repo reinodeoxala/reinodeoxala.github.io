@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Odòmáiyá Artigos Religiosos</title>
+
+<meta name="description" content="Odòmáiyá Artigos Religiosos – Loja de artigos espirituais com fundamento, tradição e respeito.">
+<meta name="keywords" content="artigos religiosos, umbanda, velas, guias, ervas, loja espiritual">
+<meta name="author" content="Odòmáiyá">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -33,20 +37,14 @@ padding:80px 20px;
 
 .header h1{
 font-family:'Cinzel',serif;
-font-size:46px;
+font-size:44px;
 letter-spacing:4px;
-}
-
-.header p{
-max-width:700px;
-margin:20px auto 0;
-opacity:.9;
 }
 
 /* BUSCA */
 .busca{
 max-width:500px;
-margin:-30px auto 40px;
+margin:-30px auto 30px;
 padding:0 20px;
 }
 
@@ -57,40 +55,27 @@ border-radius:50px;
 border:1px solid var(--prata);
 box-shadow:0 6px 20px rgba(0,0,0,.15);
 text-align:center;
-font-size:15px;
 color:var(--azul);
 }
 
-/* FILTROS */
-.filtros{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-padding:0 20px 40px;
+/* DESTAQUES */
+.destaques{
+max-width:1200px;
+margin:40px auto;
+padding:0 20px;
 }
 
-.filtros button{
-padding:12px 26px;
-border-radius:50px;
-border:1px solid var(--prata);
-background:linear-gradient(145deg,#fff,#e6ebf5);
+.destaques h2{
 font-family:'Cinzel',serif;
-cursor:pointer;
 color:var(--azul);
-transition:.3s;
+margin-bottom:20px;
 }
 
-.filtros button:hover{
-background:linear-gradient(135deg,var(--azul-bic),var(--azul));
-color:#fff;
-}
-
-/* PRODUTOS */
+/* GRID */
 .container{
 max-width:1200px;
-margin:0 auto;
-padding:0 20px 80px;
+margin:auto;
+padding:20px;
 }
 
 .grid{
@@ -103,60 +88,88 @@ gap:30px;
 background:#fff;
 border:1px solid var(--prata);
 border-radius:22px;
-overflow:hidden;
 box-shadow:0 12px 30px rgba(0,0,0,.1);
-transition:.3s;
-}
-
-.produto:hover{
-transform:translateY(-6px);
+overflow:hidden;
 }
 
 .produto img{
 width:100%;
-height:230px;
+height:200px;
 object-fit:cover;
+cursor:pointer;
 }
 
-.produto .info{
-padding:20px;
+.info{
+padding:18px;
 text-align:center;
 }
 
-.produto h3{
-font-size:18px;
-margin-bottom:6px;
-}
+.info h3{margin-bottom:5px}
 
-.produto span{
-color:#555;
-font-weight:600;
-}
+.info span{font-weight:600;color:#555}
 
-.produto a{
-display:inline-block;
-margin-top:15px;
-padding:12px 28px;
+.info button{
+margin-top:12px;
+padding:10px 24px;
 border-radius:40px;
 border:1px solid var(--prata);
 background:linear-gradient(145deg,#fff,#e6ebf5);
 font-family:'Cinzel',serif;
 color:var(--azul);
-text-decoration:none;
-transition:.3s;
+cursor:pointer;
 }
 
-.produto a:hover{
+/* MODAL PRODUTO */
+.modal{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-content{
+background:#fff;
+padding:25px;
+border-radius:20px;
+max-width:500px;
+width:90%;
+}
+
+.modal img{
+width:100%;
+border-radius:14px;
+}
+
+/* CARRINHO */
+.carrinho{
+position:fixed;
+bottom:20px;
+right:20px;
 background:linear-gradient(135deg,var(--azul-bic),var(--azul));
 color:#fff;
+padding:16px 20px;
+border-radius:50%;
+cursor:pointer;
+font-size:22px;
+z-index:999;
 }
 
-/* RODAPÉ */
-.footer{
-background:#eaf0f7;
-padding:60px 20px;
-text-align:center;
-border-top:3px solid var(--prata);
+/* BOTÃO WHATS FLUTUANTE */
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#25d366;
+color:#fff;
+padding:16px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
 }
 </style>
 </head>
@@ -164,70 +177,81 @@ border-top:3px solid var(--prata);
 
 <div class="header">
 <h1>Odòmáiyá Artigos Religiosos</h1>
-<p>Artigos com fundamento, tradição e respeito espiritual</p>
+<p>Artigos com fundamento e tradição espiritual</p>
 </div>
 
 <div class="busca">
 <input type="text" id="busca" placeholder="Pesquisar produto..." onkeyup="filtrar()">
 </div>
 
-<div class="filtros">
-<button onclick="filtrarCategoria('todos')">Todos</button>
-<button onclick="filtrarCategoria('vela')">Velas</button>
-<button onclick="filtrarCategoria('guia')">Guias</button>
-<button onclick="filtrarCategoria('erva')">Ervas</button>
-</div>
-
 <div class="container">
-<div class="grid">
+<div class="grid" id="lista">
 
-<!-- PRODUTO -->
-<div class="produto vela">
-<img src="vela.jpg">
+<div class="produto">
+<img src="vela.jpg" onclick="abrir('Vela Branca 7 dias','vela.jpg','Vela tradicional de firmeza espiritual.')">
 <div class="info">
 <h3>Vela Branca 7 dias</h3>
 <span>R$ 12,00</span><br>
-<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20Vela%20Branca%207%20dias" target="_blank">
-<i class="fab fa-whatsapp"></i> Pedir
-</a>
+<button onclick="addCarrinho('Vela Branca 7 dias',12)">Adicionar</button>
 </div>
 </div>
 
-<div class="produto guia">
-<img src="guia.jpg">
+<div class="produto">
+<img src="guia.jpg" onclick="abrir('Guia de Oxalá','guia.jpg','Guia consagrada para firmeza espiritual.')">
 <div class="info">
 <h3>Guia de Oxalá</h3>
 <span>R$ 45,00</span><br>
-<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20Guia%20de%20Oxalá" target="_blank">
-<i class="fab fa-whatsapp"></i> Pedir
+<button onclick="addCarrinho('Guia de Oxalá',45)">Adicionar</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="fechar()">
+<div class="modal-content">
+<h2 id="mtitulo"></h2>
+<img id="mimg">
+<p id="mdesc"></p>
+</div>
+</div>
+
+<!-- CARRINHO -->
+<div class="carrinho" onclick="enviar()">🛒</div>
+
+<!-- WHATS FLUTUANTE -->
+<a href="https://wa.me/5554996048808" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
 </a>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="footer">
-<p>📍 Odòmáiyá Artigos Religiosos</p>
-<p>📲 WhatsApp: (54) 99604-8808</p>
-<p>📷 Instagram: @odomaia_artigosreligiosos</p>
-</div>
 
 <script>
-function filtrar(){
-let termo = document.getElementById("busca").value.toLowerCase();
-document.querySelectorAll(".produto").forEach(p=>{
-p.style.display = p.innerText.toLowerCase().includes(termo) ? "block" : "none";
-});
+let carrinho = [];
+
+function addCarrinho(nome,preco){
+carrinho.push({nome,preco});
+alert("Adicionado ao pedido!");
 }
 
-function filtrarCategoria(cat){
-document.querySelectorAll(".produto").forEach(p=>{
-if(cat=="todos"){
-p.style.display="block";
-}else{
-p.style.display = p.classList.contains(cat) ? "block" : "none";
+function enviar(){
+if(carrinho.length==0){alert("Carrinho vazio");return;}
+let msg="Olá, gostaria de pedir:%0A";
+carrinho.forEach(p=>msg+=`- ${p.nome} (R$${p.preco})%0A`);
+window.open("https://wa.me/5554996048808?text="+msg);
 }
+
+function abrir(t,img,d){
+document.getElementById("modal").style.display="flex";
+mtitulo.innerText=t;
+mimg.src=img;
+mdesc.innerText=d;
+}
+function fechar(){modal.style.display="none"}
+
+function filtrar(){
+let termo=busca.value.toLowerCase();
+document.querySelectorAll(".produto").forEach(p=>{
+p.style.display = p.innerText.toLowerCase().includes(termo) ? "block":"none";
 });
 }
 </script>
