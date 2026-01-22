@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Odòmáiyá Artigos Religiosos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--azul-bic:#0057b8;
+--azul:#4f86b6;
+--prata:#c9c9c9;
+}
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:linear-gradient(180deg,#fbfdff,#f1f4f9);
+}
+
+.topo{
+background:linear-gradient(180deg,#003d7a,#0057b8,#4f86b6);
+color:#fff;
+text-align:center;
+padding:80px 20px;
+}
+
+.topo h1{
+font-family:'Cinzel',serif;
+letter-spacing:4px;
+font-size:42px;
+}
+
+.busca{
+max-width:500px;
+margin:40px auto;
+padding:0 20px;
+}
+
+.busca input{
+width:100%;
+padding:16px;
+border-radius:40px;
+border:1px solid var(--prata);
+text-align:center;
+font-size:15px;
+color:var(--azul);
+}
+
+.categoria{
+max-width:1200px;
+margin:60px auto;
+padding:0 20px;
+}
+
+.categoria h2{
+font-family:'Cinzel',serif;
+color:var(--azul);
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.produto{
+background:#fff;
+border:1px solid var(--prata);
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+border-radius:18px;
+overflow:hidden;
+text-align:center;
+padding-bottom:20px;
+}
+
+.produto img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.produto h3{
+margin:15px 10px 5px;
+color:#333;
+}
+
+.produto span{
+color:#666;
+font-size:15px;
+}
+
+.produto a{
+display:inline-block;
+margin-top:15px;
+padding:12px 26px;
+border-radius:40px;
+border:1px solid var(--prata);
+background:linear-gradient(145deg,#fff,#e6ebf5);
+color:var(--azul);
+text-decoration:none;
+font-family:'Cinzel',serif;
+transition:.3s;
+}
+
+.produto a:hover{
+background:linear-gradient(135deg,var(--azul-bic),var(--azul));
+color:#fff;
+}
+
+.rodape{
+text-align:center;
+padding:60px 20px;
+background:#eef3f8;
+border-top:3px solid var(--prata);
+}
+</style>
+</head>
+<body>
+
+<div class="topo">
+<h1>Odòmáiyá Artigos Religiosos</h1>
+<p>Artigos com fundamento, respeito e tradição espiritual</p>
+</div>
+
+<div class="busca">
+<input type="text" id="busca" placeholder="Pesquisar produto..." onkeyup="filtrar()">
+</div>
+
+<!-- CATEGORIA -->
+<div class="categoria">
+<h2>Velas</h2>
+<div class="grid">
+
+<div class="produto">
+<img src="vela.jpg">
+<h3>Vela Branca 7 dias</h3>
+<span>R$ 12,00</span><br>
+<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20a%20Vela%20Branca%207%20dias" target="_blank">
+<i class="fab fa-whatsapp"></i> Pedir no WhatsApp
+</a>
+</div>
+
+<div class="produto">
+<img src="vela2.jpg">
+<h3>Vela Azul Oxalá</h3>
+<span>R$ 15,00</span><br>
+<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20a%20Vela%20Azul%20de%20Oxalá" target="_blank">
+<i class="fab fa-whatsapp"></i> Pedir no WhatsApp
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- RODAPÉ -->
+<div class="rodape">
+<p>📍 Odòmáiyá Artigos Religiosos</p>
+<p>📲 WhatsApp: (54) 99604-8808</p>
+<p>📷 Instagram: @odomaia_artigosreligiosos</p>
+</div>
+
+<script>
+function filtrar(){
+let termo = document.getElementById("busca").value.toLowerCase();
+document.querySelectorAll(".produto").forEach(prod=>{
+prod.style.display = prod.innerText.toLowerCase().includes(termo) ? "block" : "none";
+});
+}
+</script>
+
+</body>
+</html>
