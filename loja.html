@@ -5,7 +5,7 @@
 <title>Odòmáiyá Artigos Religiosos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -13,97 +13,136 @@
 --azul-bic:#0057b8;
 --azul:#4f86b6;
 --prata:#c9c9c9;
+--fundo:#f6f9fc;
 }
+
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-margin:0;
 font-family:'Montserrat',sans-serif;
-background:linear-gradient(180deg,#fbfdff,#f1f4f9);
+background:var(--fundo);
 }
 
-.topo{
+/* TOPO */
+.header{
 background:linear-gradient(180deg,#003d7a,#0057b8,#4f86b6);
 color:#fff;
 text-align:center;
 padding:80px 20px;
 }
 
-.topo h1{
+.header h1{
 font-family:'Cinzel',serif;
+font-size:46px;
 letter-spacing:4px;
-font-size:42px;
 }
 
+.header p{
+max-width:700px;
+margin:20px auto 0;
+opacity:.9;
+}
+
+/* BUSCA */
 .busca{
 max-width:500px;
-margin:40px auto;
+margin:-30px auto 40px;
 padding:0 20px;
 }
 
 .busca input{
 width:100%;
 padding:16px;
-border-radius:40px;
+border-radius:50px;
 border:1px solid var(--prata);
+box-shadow:0 6px 20px rgba(0,0,0,.15);
 text-align:center;
 font-size:15px;
 color:var(--azul);
 }
 
-.categoria{
-max-width:1200px;
-margin:60px auto;
-padding:0 20px;
+/* FILTROS */
+.filtros{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+padding:0 20px 40px;
 }
 
-.categoria h2{
+.filtros button{
+padding:12px 26px;
+border-radius:50px;
+border:1px solid var(--prata);
+background:linear-gradient(145deg,#fff,#e6ebf5);
 font-family:'Cinzel',serif;
+cursor:pointer;
 color:var(--azul);
-margin-bottom:30px;
+transition:.3s;
+}
+
+.filtros button:hover{
+background:linear-gradient(135deg,var(--azul-bic),var(--azul));
+color:#fff;
+}
+
+/* PRODUTOS */
+.container{
+max-width:1200px;
+margin:0 auto;
+padding:0 20px 80px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
 .produto{
 background:#fff;
 border:1px solid var(--prata);
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-border-radius:18px;
+border-radius:22px;
 overflow:hidden;
-text-align:center;
-padding-bottom:20px;
+box-shadow:0 12px 30px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.produto:hover{
+transform:translateY(-6px);
 }
 
 .produto img{
 width:100%;
-height:220px;
+height:230px;
 object-fit:cover;
 }
 
+.produto .info{
+padding:20px;
+text-align:center;
+}
+
 .produto h3{
-margin:15px 10px 5px;
-color:#333;
+font-size:18px;
+margin-bottom:6px;
 }
 
 .produto span{
-color:#666;
-font-size:15px;
+color:#555;
+font-weight:600;
 }
 
 .produto a{
 display:inline-block;
 margin-top:15px;
-padding:12px 26px;
+padding:12px 28px;
 border-radius:40px;
 border:1px solid var(--prata);
 background:linear-gradient(145deg,#fff,#e6ebf5);
+font-family:'Cinzel',serif;
 color:var(--azul);
 text-decoration:none;
-font-family:'Cinzel',serif;
 transition:.3s;
 }
 
@@ -112,53 +151,63 @@ background:linear-gradient(135deg,var(--azul-bic),var(--azul));
 color:#fff;
 }
 
-.rodape{
-text-align:center;
+/* RODAPÉ */
+.footer{
+background:#eaf0f7;
 padding:60px 20px;
-background:#eef3f8;
+text-align:center;
 border-top:3px solid var(--prata);
 }
 </style>
 </head>
 <body>
 
-<div class="topo">
+<div class="header">
 <h1>Odòmáiyá Artigos Religiosos</h1>
-<p>Artigos com fundamento, respeito e tradição espiritual</p>
+<p>Artigos com fundamento, tradição e respeito espiritual</p>
 </div>
 
 <div class="busca">
 <input type="text" id="busca" placeholder="Pesquisar produto..." onkeyup="filtrar()">
 </div>
 
-<!-- CATEGORIA -->
-<div class="categoria">
-<h2>Velas</h2>
+<div class="filtros">
+<button onclick="filtrarCategoria('todos')">Todos</button>
+<button onclick="filtrarCategoria('vela')">Velas</button>
+<button onclick="filtrarCategoria('guia')">Guias</button>
+<button onclick="filtrarCategoria('erva')">Ervas</button>
+</div>
+
+<div class="container">
 <div class="grid">
 
-<div class="produto">
+<!-- PRODUTO -->
+<div class="produto vela">
 <img src="vela.jpg">
+<div class="info">
 <h3>Vela Branca 7 dias</h3>
 <span>R$ 12,00</span><br>
-<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20a%20Vela%20Branca%207%20dias" target="_blank">
-<i class="fab fa-whatsapp"></i> Pedir no WhatsApp
+<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20Vela%20Branca%207%20dias" target="_blank">
+<i class="fab fa-whatsapp"></i> Pedir
 </a>
 </div>
+</div>
 
-<div class="produto">
-<img src="vela2.jpg">
-<h3>Vela Azul Oxalá</h3>
-<span>R$ 15,00</span><br>
-<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20a%20Vela%20Azul%20de%20Oxalá" target="_blank">
-<i class="fab fa-whatsapp"></i> Pedir no WhatsApp
+<div class="produto guia">
+<img src="guia.jpg">
+<div class="info">
+<h3>Guia de Oxalá</h3>
+<span>R$ 45,00</span><br>
+<a href="https://wa.me/5554996048808?text=Olá,%20quero%20comprar%20Guia%20de%20Oxalá" target="_blank">
+<i class="fab fa-whatsapp"></i> Pedir
 </a>
 </div>
+</div>
 
 </div>
 </div>
 
-<!-- RODAPÉ -->
-<div class="rodape">
+<div class="footer">
 <p>📍 Odòmáiyá Artigos Religiosos</p>
 <p>📲 WhatsApp: (54) 99604-8808</p>
 <p>📷 Instagram: @odomaia_artigosreligiosos</p>
@@ -167,8 +216,18 @@ border-top:3px solid var(--prata);
 <script>
 function filtrar(){
 let termo = document.getElementById("busca").value.toLowerCase();
-document.querySelectorAll(".produto").forEach(prod=>{
-prod.style.display = prod.innerText.toLowerCase().includes(termo) ? "block" : "none";
+document.querySelectorAll(".produto").forEach(p=>{
+p.style.display = p.innerText.toLowerCase().includes(termo) ? "block" : "none";
+});
+}
+
+function filtrarCategoria(cat){
+document.querySelectorAll(".produto").forEach(p=>{
+if(cat=="todos"){
+p.style.display="block";
+}else{
+p.style.display = p.classList.contains(cat) ? "block" : "none";
+}
 });
 }
 </script>
