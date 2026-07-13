@@ -11,7 +11,7 @@
 
     position:relative;
 
-    min-height:100vh;
+    height:100vh;
 
     display:flex;
 
@@ -19,25 +19,41 @@
 
     justify-content:center;
 
-    text-align:center;
-
     overflow:hidden;
+
+    text-align:center;
 
     color:var(--white);
 
-    padding:140px 20px 100px;
+    padding:140px 20px 80px;
 
-    background:
+    background:var(--gradient-hero);
 
-    var(--gradient-hero),
+}
 
-    url("../../img/hero.jpg");
+/* ==========================================================
+   IMAGEM DE FUNDO
+========================================================== */
 
-    background-size:cover;
+.hero-bg{
 
-    background-position:center;
+    position:absolute;
 
-    background-repeat:no-repeat;
+    inset:0;
+
+    z-index:0;
+
+}
+
+.hero-bg img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
 
 }
 
@@ -57,11 +73,13 @@
 
     linear-gradient(
 
-    rgba(0,0,0,.18),
+        rgba(0,0,0,.35),
 
-    rgba(0,0,0,.50)
+        rgba(0,0,0,.70)
 
     );
+
+    z-index:1;
 
 }
 
@@ -75,7 +93,11 @@
 
     z-index:2;
 
+    width:100%;
+
     max-width:900px;
+
+    animation:heroFade 1.2s ease;
 
 }
 
@@ -85,11 +107,11 @@
 
 .hero-logo{
 
-    width:180px;
+    width:220px;
 
     margin:0 auto 35px;
 
-    filter:drop-shadow(0 12px 25px rgba(0,0,0,.35));
+    filter:drop-shadow(0 12px 30px rgba(0,0,0,.45));
 
 }
 
@@ -101,7 +123,9 @@
 
     color:var(--white);
 
-    margin-bottom:25px;
+    margin-bottom:24px;
+
+    text-shadow:0 8px 25px rgba(0,0,0,.45);
 
 }
 
@@ -117,13 +141,15 @@
 
 .hero p{
 
+    max-width:760px;
+
+    margin:0 auto;
+
     color:rgba(255,255,255,.92);
 
     font-size:1.2rem;
 
-    max-width:760px;
-
-    margin:0 auto 45px;
+    line-height:1.8;
 
 }
 
@@ -133,9 +159,13 @@
 
 .hero-buttons{
 
+    margin-top:50px;
+
     display:flex;
 
     justify-content:center;
+
+    align-items:center;
 
     gap:20px;
 
@@ -144,7 +174,7 @@
 }
 
 /* ==========================================================
-   SCROLL INDICATOR
+   INDICADOR DE ROLAGEM
 ========================================================== */
 
 .scroll-down{
@@ -163,13 +193,23 @@
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
 
-    color:rgba(255,255,255,.8);
-
-    font-size:.9rem;
+    color:rgba(255,255,255,.85);
 
     z-index:2;
+
+    animation:fadeScroll 2s infinite;
+
+}
+
+.scroll-down span{
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
 
 }
 
@@ -177,41 +217,65 @@
 
     font-size:1.4rem;
 
-    animation:bounce 2s infinite;
-
 }
 
 /* ==========================================================
    ANIMAÇÕES
 ========================================================== */
 
-@keyframes bounce{
+@keyframes heroFade{
 
-    0%,20%,50%,80%,100%{
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
 
         transform:translateY(0);
 
     }
 
-    40%{
+}
 
-        transform:translateY(8px);
+@keyframes fadeScroll{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+        opacity:.2;
 
     }
 
-    60%{
+    50%{
 
-        transform:translateY(4px);
+        transform:translate(-50%,10px);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+        opacity:.2;
 
     }
 
 }
 
 /* ==========================================================
-   RESPONSIVO
+   RESPONSIVIDADE
 ========================================================== */
 
-@media(max-width:992px){
+@media (max-width:992px){
 
     .hero{
 
@@ -221,23 +285,27 @@
 
     .hero-logo{
 
-        width:150px;
+        width:180px;
 
     }
 
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
     .hero{
 
-        min-height:85vh;
+        height:auto;
+
+        min-height:100vh;
+
+        padding:140px 20px 80px;
 
     }
 
     .hero-logo{
 
-        width:130px;
+        width:150px;
 
     }
 
@@ -251,23 +319,33 @@
 
         flex-direction:column;
 
-        align-items:center;
-
     }
 
 }
 
-@media(max-width:480px){
+@media (max-width:480px){
 
     .hero{
 
-        padding:120px 20px 80px;
+        padding-top:120px;
 
     }
 
     .hero-logo{
 
-        width:110px;
+        width:120px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
 
     }
 
