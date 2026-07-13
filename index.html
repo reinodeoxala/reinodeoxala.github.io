@@ -2,127 +2,183 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reino de Oxalá</title>
-<meta name="description" content="Portal institucional do Reino de Oxalá">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta name="description" content="Reino de Oxalá — espaço espiritual dedicado à evolução, caridade e fortalecimento da fé. Atendimentos mediante agendamento.">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Montserrat',sans-serif; background:#f6f8fb; color:#333; line-height:1.7; }
+.hero { background:linear-gradient(180deg,#003d7a,#0057b8); color:#fff; text-align:center; padding:140px 20px 160px; }
+.hero img { max-width:240px; margin-bottom:30px; filter:drop-shadow(0 12px 22px rgba(0,0,0,.4)); }
+.hero h1 { font-family:'Cinzel',serif; font-size:56px; letter-spacing:8px; }
+.hero p { max-width:900px; margin:35px auto 0; font-size:18px; color:#eef4ff; }
+.menu { max-width:1200px; margin:-45px auto 90px; background:#fff; border-radius:60px; box-shadow:0 14px 40px rgba(0,0,0,.15); padding:22px; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; }
+.menu a, .menu input { height:54px; border-radius:50px; padding:0 22px; display:flex; align-items:center; justify-content:center; font-family:'Cinzel',serif; font-size:14px; letter-spacing:1px; transition:.3s; }
+.menu a { text-decoration:none; color:#0057b8; border:1px solid #e1e1e1; background:#fff; }
+.menu a:hover { background:#0057b8; color:#fff; transform:translateY(-2px); }
+.menu input { border:1px solid #e1e1e1; outline:none; font-family:'Montserrat',sans-serif; max-width:200px; text-align:center; }
+section { max-width:1000px; margin:120px auto; padding:0 20px; text-align:center; }
+section h2 { font-family:'Cinzel',serif; font-size:30px; letter-spacing:3px; color:#0057b8; margin-bottom:22px; }
+.divisor { display:flex; align-items:center; gap:12px; margin-bottom:26px; }
+.divisor::before, .divisor::after { content:""; flex:1; height:2px; background:linear-gradient(90deg,#0057b8,transparent); }
+.divisor span { width:12px; height:12px; background:#0057b8; border-radius:50%; }
+.foto { max-width:780px; margin:0 auto; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 14px 40px rgba(0,0,0,.15); }
+.foto img { width:100%; display:block; }
+.legenda { padding:14px; font-size:14px; background:#f1f4f9; }
+section p { max-width:880px; margin:30px auto 0; font-size:17px; }
+.botao-central { display:flex; justify-content:center; gap:20px; margin-top:40px; flex-wrap:wrap; }
+.botao-central a { height:56px; padding:0 24px; border-radius:50px; border:1px solid #e1e1e1; display:flex; align-items:center; gap:10px; font-family:'Cinzel',serif; text-decoration:none; color:#0057b8; transition:.3s; }
+.botao-central a:hover { background:#0057b8; color:#fff; }
+.contato { background:#eef2f8; padding:100px 20px; text-align:center; border-top:4px solid #e1e1e1; }
+.contato h2 { font-family:'Cinzel',serif; font-size:30px; color:#0057b8; margin-bottom:20px; }
+</style>
 </head>
+
 <body>
 
-<header class="header" id="inicio">
-  <div class="container">
-    <a href="#inicio" class="logo"><img src="img/reino.png" alt="Reino de Oxalá"></a>
-    <nav class="menu">
-      <a href="#inicio">Início</a>
-      <a href="#casa">A Casa</a>
-      <a href="#tradicoes">Tradições</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#noticias">Notícias</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contato">Contato</a>
-      <a href="#loja" target="_blank">Loja</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-<img src="img/reino.png" alt="Logo Reino de Oxalá">
+<div class="hero">
+<img src="img/reino.png" alt="Reino de Oxalá">
 <h1>REINO DE OXALÁ</h1>
-<p>Uma Casa Espiritual fundamentada na fé, na caridade, no acolhimento e na evolução espiritual.</p>
-<div class="botao-central">
-<a class="botao" href="#agenda">Ver Agenda</a>
-<a class="botao" href="#casa">Conheça a Casa</a>
+<p>
+O Reino de Oxalá é uma Casa Espiritual estruturada sobre os princípios da fé,
+da caridade e do desenvolvimento espiritual consciente.
+<br><br>
+Nosso espaço foi criado para acolher, orientar e fortalecer espiritualmente
+aqueles que nos procuram, oferecendo um ambiente seguro,
+responsável e comprometido com o cuidado espiritual individual.
+</p>
 </div>
-</section>
 
-<section id="proxima-gira">
-<h2>Próxima Gira</h2>
+<div class="menu">
+<a href="#nacao">Nação</a>
+<a href="#umbanda">Umbanda</a>
+<a href="#quimbanda">Quimbanda</a>
+<a href="#agenda">Agenda</a>
+<a href="#trabalhos">Trabalhos</a>
+<a href="#loja">Odòmáiyá</a>
+<a href="#contato">Contatos</a>
+<input type="text" id="busca" placeholder="Pesquisar">
+</div>
+
+<section id="nacao">
+<div class="divisor"><span></span></div>
+<h2>Nação</h2>
 <div class="foto">
-<div class="legenda">
-<h3>Caboclos</h3>
-<p><strong>Data:</strong> 20/07/2026 - 19h30</p>
-<p>Faltam <span id="contador">--</span> dias</p>
-<a class="botao" href="#agenda">Ver detalhes</a>
+<img src="img/nacao.png" alt="Nação">
+<div class="legenda">Tradição, fundamento e ancestralidade</div>
 </div>
-</div>
+<p>
+A Nação é conduzida com absoluto respeito aos fundamentos ancestrais,
+preservando os ritos, a hierarquia e os ensinamentos transmitidos ao longo das gerações.
+</p>
 </section>
 
-<section id="casa">
-<h2>A Casa</h2>
-<p>O Reino de Oxalá foi criado para acolher, orientar e fortalecer espiritualmente todos aqueles que buscam um caminho de fé, respeito e responsabilidade espiritual.</p>
+<section id="umbanda">
+<div class="divisor"><span></span></div>
+<h2>Umbanda</h2>
+<div class="foto">
+<img src="img/umbanda.png" alt="Umbanda">
+<div class="legenda">Caridade, acolhimento e amor ao próximo</div>
+</div>
+<p>
+A Umbanda é praticada no Reino de Oxalá como um caminho de caridade,
+orientação e auxílio espiritual,
+guiada pela luz dos Orixás e pela sabedoria das entidades espirituais.
+</p>
 </section>
 
-<section id="tradicoes">
-<h2>Nossas Tradições</h2>
-<div class="cards">
-<article class="foto"><img src="img/nacao.png" alt=""><div class="legenda"><h3>Nação</h3><p>Fundamentos e ancestralidade.</p></div></article>
-<article class="foto"><img src="img/umbanda.png" alt=""><div class="legenda"><h3>Umbanda</h3><p>Caridade e acolhimento.</p></div></article>
-<article class="foto"><img src="img/quimbanda.png" alt=""><div class="legenda"><h3>Quimbanda</h3><p>Firmeza e responsabilidade.</p></div></article>
+<section id="quimbanda">
+<div class="divisor"><span></span></div>
+<h2>Quimbanda</h2>
+<div class="foto">
+<img src="img/quimbanda.png" alt="Quimbanda">
+<div class="legenda">Firmeza, ordem e responsabilidade espiritual</div>
 </div>
+<p>
+A Quimbanda é conduzida com seriedade, disciplina e profundo respeito aos fundamentos.
+</p>
 </section>
 
 <section id="agenda">
-<h2>Agenda</h2>
-<p>Em breve um calendário interativo. Nesta etapa, a estrutura já está preparada.</p>
-</section>
-
-<section id="noticias">
-<h2>Últimas Notícias</h2>
-<div class="cards">
-<article class="foto"><div class="legenda"><h3>Nova Gira</h3><p>Confira a programação das próximas atividades.</p></div></article>
-<article class="foto"><div class="legenda"><h3>Avisos</h3><p>Informações importantes para os visitantes.</p></div></article>
+<div class="divisor"><span></span></div>
+<h2>Agenda da Casa</h2>
+<div class="foto">
+<img src="img/agenda.png" alt="Agenda da Casa">
+<div class="legenda">Organização e preparo espiritual</div>
 </div>
-</section>
-
-<section id="galeria">
-<h2>Galeria</h2>
-<p>Espaço reservado para galeria moderna com filtros e visualização em tela cheia.</p>
+<p>
+A agenda do Reino de Oxalá é organizada com cuidado,
+preparo espiritual e respeito aos fundamentos necessários para cada atividade.
+</p>
 </section>
 
 <section id="trabalhos">
+<div class="divisor"><span></span></div>
 <h2>Trabalhos Espirituais</h2>
-<p>Os atendimentos são realizados mediante agendamento, sempre com responsabilidade, ética e respeito aos fundamentos.</p>
-<a class="botao" href="https://wa.me/5554996731801" target="_blank">Agendar Atendimento</a>
-</section>
-
-<section id="loja">
-<h2>Odòmáiyá Artigos Religiosos</h2>
-<p>A loja possui site e atendimento próprios.</p>
-<a class="botao" href="https://www.instagram.com/odomaia_artigosreligiosos" target="_blank">Visitar Loja Oficial</a>
-</section>
-
-<section id="contato">
-<h2>Contato</h2>
-<p>📍 Rua Cel. Mostardeiro – Boqueirão – Passo Fundo/RS</p>
-<p>Atendimentos mediante agendamento prévio.</p>
+<div class="foto">
+<img src="img/trabalhos.jpg" alt="Trabalhos Espirituais">
+<div class="legenda">Auxílio, orientação e cuidado espiritual</div>
+</div>
+<p>
+Os trabalhos espirituais realizados no Reino de Oxalá
+são conduzidos com discrição, seriedade e profundo compromisso espiritual.
+</p>
 <div class="botao-central">
-<a class="botao" href="https://wa.me/5554996731801">WhatsApp</a>
-<a class="botao" href="https://www.instagram.com/pai_gabrielgodoy">Instagram</a>
+<a href="https://wa.me/5554996731801" target="_blank">
+<i class="fab fa-whatsapp"></i> Agendar Atendimento
+</a>
 </div>
 </section>
 
-</main>
+<section id="loja">
+<div class="divisor"><span></span></div>
+<h2>Odòmáiyá Artigos Religiosos</h2>
+<div class="foto">
+<img src="img/loja.jpg" alt="Odòmáiyá Artigos Religiosos">
+<div class="legenda">Artigos religiosos com fundamento</div>
+</div>
+<div class="botao-central">
+<a href="https://wa.me/5554996048808" target="_blank">
+<i class="fab fa-whatsapp"></i> WhatsApp da Loja
+</a>
+<a href="https://www.instagram.com/odomaia_artigosreligiosos" target="_blank">
+<i class="fab fa-instagram"></i> Instagram
+</a>
+</div>
+</section>
 
-<footer>
-<img src="img/reino.png" alt="Logo" style="max-width:90px;margin:auto;">
-<p>Reino de Oxalá</p>
-<p>Versão 2.0</p>
-<p>&copy; 2026 - Todos os direitos reservados.</p>
-</footer>
+<div class="contato" id="contato">
+<h2>Contatos</h2>
+<p>
+📍 R. Cel. Mostardeiro - Boqueirão, Passo Fundo - RS<br>
+Atendimentos realizados mediante contato e agendamento prévio.
+</p>
+<div class="botao-central">
+<a href="https://wa.me/5554996731801" target="_blank">
+<i class="fab fa-whatsapp"></i> WhatsApp - Reino
+</a>
+<a href="https://www.instagram.com/pai_gabrielgodoy" target="_blank">
+<i class="fab fa-instagram"></i> Instagram - Pai Gabriel
+</a>
+</div>
+</div>
 
 <script>
-const alvo=new Date("2026-07-20T19:30:00");
-const hoje=new Date();
-const dias=Math.max(0,Math.ceil((alvo-hoje)/86400000));
-const el=document.getElementById("contador");
-if(el) el.textContent=dias;
+document.getElementById("busca").addEventListener("input",function(){
+  let termo=this.value.toLowerCase();
+  document.querySelectorAll("section").forEach(sec=>{
+    sec.style.display = sec.innerText.toLowerCase().includes(termo) ? "block" : "none";
+  });
+});
 </script>
 
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 </body>
 </html>
