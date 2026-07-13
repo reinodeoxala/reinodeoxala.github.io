@@ -1,1 +1,282 @@
+/* ==========================================================
+   REINO DE OXALÁ 2.0
+   RESPONSIVE.CSS
+========================================================== */
 
+
+/* ==========================================================
+   DESKTOP GRANDE
+========================================================== */
+
+@media (min-width:1600px){
+
+    .container{
+
+        max-width:1500px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   NOTEBOOK
+========================================================== */
+
+@media (max-width:1200px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    html{
+
+        font-size:15px;
+
+    }
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .header{
+
+        padding:18px 0;
+
+    }
+
+    .hero{
+
+        min-height:90vh;
+
+    }
+
+    .hero-content{
+
+        max-width:700px;
+
+    }
+
+    .hero-logo{
+
+        width:180px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET VERTICAL
+========================================================== */
+
+@media (max-width:768px){
+
+    html{
+
+        font-size:14px;
+
+    }
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:140px 0 100px;
+
+    }
+
+    .hero-logo{
+
+        width:150px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .section{
+
+        padding:90px 0;
+
+    }
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+========================================================== */
+
+@media (max-width:576px){
+
+    html{
+
+        font-size:13px;
+
+    }
+
+    h1{
+
+        font-size:2.4rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    h3{
+
+        font-size:1.5rem;
+
+    }
+
+    .hero{
+
+        padding-top:120px;
+
+    }
+
+    .hero-logo{
+
+        width:120px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .btn-group{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .card-body{
+
+        padding:24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   IPHONE SE
+========================================================== */
+
+@media (max-width:390px){
+
+    html{
+
+        font-size:12px;
+
+    }
+
+    .hero-logo{
+
+        width:100px;
+
+    }
+
+    .section{
+
+        padding:70px 0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TELAS BAIXAS
+========================================================== */
+
+@media (max-height:700px){
+
+    .hero{
+
+        min-height:700px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   IMPRESSÃO
+========================================================== */
+
+@media print{
+
+    .header,
+
+    .footer,
+
+    .hero-buttons,
+
+    .scroll-down{
+
+        display:none !important;
+
+    }
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+}
